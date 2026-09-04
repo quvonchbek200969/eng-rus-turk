@@ -85,7 +85,7 @@ export const api = {
     if (clean.length < 3 || String(password || '').length < 4) {
       throw new Error("Foydalanuvchi nomi kamida 3, parol kamida 4 belgidan iborat bo'lishi kerak");
     }
-    const email = `${clean.toLowerCase()}@til-sayohati.local`;
+    const email = `${clean.toLowerCase()}@til-sayohati.app`;
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -100,7 +100,7 @@ export const api = {
   },
 
   login: async ({ username, password }) => {
-    const email = `${String(username || '').trim().toLowerCase()}@til-sayohati.local`;
+    const email = `${String(username || '').trim().toLowerCase()}@til-sayohati.app`;
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) throw new Error("Login yoki parol noto'g'ri");
     const { data: profile } = await supabase.from('profiles').select('*').eq('id', data.user.id).single();

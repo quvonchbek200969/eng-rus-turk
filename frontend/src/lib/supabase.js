@@ -27,5 +27,5 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
 /** Login uchun ishlatiladigan "sun'iy" email — Supabase Auth email talab qilgani
  *  uchun, lekin ilova login/parol asosida ishlagani uchun shunday hal qilindi. */
 export function usernameToEmail(username) {
-  return `${String(username).trim().toLowerCase()}@til-sayohati.local`;
+  return `${String(username).trim().toLowerCase()}@til-sayohati.app`;
 }

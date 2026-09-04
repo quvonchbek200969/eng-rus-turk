@@ -63,7 +63,7 @@ Deno.serve(async (req) => {
       if (username.length < 3 || password.length < 4) {
         return json({ error: "Foydalanuvchi nomi kamida 3, parol kamida 4 belgidan iborat bo'lishi kerak" }, 400);
       }
-      const email = `${username.toLowerCase()}@til-sayohati.local`;
+      const email = `${username.toLowerCase()}@til-sayohati.app`;
       const { data: created, error } = await admin.auth.admin.createUser({
         email,
         password,
